@@ -1,0 +1,52 @@
+h1{
+    text-transform: uppercase; 
+    text-align: center;
+}
+
+h2{
+    text-transform: uppercase;
+    color: blue;
+}
+
+p{
+    color: red;
+}
+
+/*aca trabajamos con clases*/
+.destacados{
+    color: green;
+    font-weight: bold;
+}
+
+#amarillo{
+    background-color: yellow;
+    box-shadow: -124px -61px 0px 0px rgba(0,0,0,0.75);
+
+}
+
+
+#amarillo:hover{
+    background-color: orange;
+}
+
+#verde{
+    background-color: greenyellow;
+}
+
+img{
+    filter: grayscale(100%);
+}
+
+img:hover{
+    filter: grayscale(0%);
+}
+a{
+    font-size: 50px;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    background-color: yellow;
+    
+}

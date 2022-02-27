@@ -1,0 +1,56 @@
+h1{
+    text-transform: uppercase; 
+    text-align: center;
+    color: yellowgreen;
+}
+img{
+    filter: grayscale(0%);
+}
+
+img:hover{
+    filter: grayscale(100%);
+}
+a{
+    
+}
+
+.destacados{
+    color: red;
+    font-weight: bold;
+}
+
+#verde{
+    background-color: greenyellow;
+}
+
+.calle{
+    color: brown;
+}
+
+.edad{
+    color: brown;
+}
+
+.tituloedad{
+   text-decoration: underline;
+}
+
+.titulodomicilio{
+    text-decoration: underline;
+}
+
+.series{
+    text-decoration: underline;
+}
+
+.pelis{
+    text-decoration: underline;
+}
+
+a:hover{
+    color: black;
+    background-color: red;
+    
+}
+
+
