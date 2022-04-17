@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function cambiaFondo(x) {
+            console.log(x.value);
+
+            var body = document.getElementById("body");
+            body.style.backgroundColor = x.value;
+
+        }
+          
+
+    </script>
+
+
+
+</head>
+<body id="body">
+
+ <select name="fondo" id="fondo" onchange="cambiaFondo(this)">
+    <option value="red">Rojo</option>
+    <option value="blue">Azul</option>
+    <option value="green">Verde</option>
+
+</select>
+    
+</body>
+</html>
