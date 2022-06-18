@@ -57,3 +57,16 @@ h1, h2 {
     margin-right: 1.4rem;
     opacity: 1;
 }
+
+.testimonios{
+    background-color: #dadada;
+    padding-bottom:  4rem !important;
+}
+
+.testimonio {
+    text-align: center;
+    padding: 50px 20px;
+}
+.staff {
+    background: #efefef;
+}
