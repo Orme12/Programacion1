@@ -11,16 +11,16 @@
                 <a class="nav-link" data-scroll href="#home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-scroll href="#novedades">novedades</a>
+                <a class="nav-link" data-scroll href="#novedades">Novedades</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-scroll href="#historia" tabindex="-1" aria-disabled="true">historia</a>
+                <a class="nav-link" data-scroll href="#historia" tabindex="-1" aria-disabled="true">Historia</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-scroll href="#nosotros">nosotros</a>
+                <a class="nav-link" data-scroll href="#nosotros">Nosotros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-scroll href="#conocenos">conocenos</a>
+                <a class="nav-link" data-scroll href="#conocenos">Conocenos</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -32,8 +32,8 @@
 <div class="container-fluid">
     <div id="home" class="row align-items-center hero">
         <div class="col-lg-3 offset-lg-2">
-            <p>bajada</p>
-            <h1>titulo principal</h1>
+            <p>Bajada</p>
+            <h1>Titulo Principal</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores incidunt a quos dolores
                 temporibus fugit eaque inventore non? Deserunt repudiandae facilis voluptatem possimus fugiat
                 consequuntur labore similique illum alias.</p>
@@ -43,21 +43,19 @@
     </div>
     <div id="novedades" class="row py-4">
         <div class="col-md-5 offset-md-2 py-3">
-            <h2>novedades</h2>
+            <h2>Novedades</h2>
             <ul class="lista-novedades">
-                <li><a href="#"><img src="images/novedades01.jpg">nuevas recetas</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">nuevas recetas</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">nuevas recetas</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">nuevas recetas</a></li>
-                <li><a href="#"><img src="images/novedades01.jpg">nuevas recetas</a></li>
-
+                {{#each novedades}}
+                <li><a href="javascript:void(0);" data-toggle="modal" data-target="#modal{{id}}"><img
+                            src="images/novedades01.jpg">{{titulo}}</a></li>
+                {{/each}}
             </ul>
 
         </div>
 
         <div class="col-md-3">
             <div class="rounded py-3 testimonios">
-                <h2 class="text-center">testimonios</h2>
+                <h2 class="text-center">Testimonios</h2>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -95,6 +93,29 @@
                 </div>
             </div>
 
+            {{!-- inicio modal --}}
+            {{#each novedades}}
+            <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-totle" id="exampleModalLable">{{titulo}}</h4>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                            <h5>{{subtitulo}}</h5>
+                            <p>{{cuerpo}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{!-- fin modal --}}
+
         </div>
 
     </div>
@@ -108,7 +129,7 @@
             <img src="images/historia_2.jpg" alt="historia 2" class="img-fluid">
         </div>
         <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
-            <h2>historia</h2>
+            <h2>Historia</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio officia beatae praesentium
                 necessitatibus accusamus cumque vel natus quaerat, facere voluptates totam illo! Illo commodi
                 impedit quis architecto maiores cum iusto?</p>
@@ -118,7 +139,7 @@
     <!-- inicio nosotros -->
     <div id="nosotros" class="row align-items-stretch my-3 staff py-4 staff">
         <div class="col-lg-8 offset-lg-2">
-            <h2>nosotros</h2>
+            <h2>Nosotros</h2>
             <div class="card-deck">
                 <!-- inicio card-deck -->
                 <div class="card">
@@ -134,9 +155,10 @@
                 <div class="card">
                     <img src="images/nosotros02.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card title">Diana Reyes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's content.</p>
+                        <h5 class="card title">Juan Perez</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam
+                            doloremque libero commodi fugit veniam atque, ducimus iste, voluptates labore, saepe maxime
+                            accusamus ea ipsum rem nulla vero iure tenetur!</p>
                     </div>
                 </div>
                 <!-- fin card-deck -->
@@ -144,9 +166,10 @@
                 <div class="card">
                     <img src="images/nosotros03.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card title">Diana Reyes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's content.</p>
+                        <h5 class="card title">Agustin Peralta</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex porro aut
+                            exercitationem rerum, fugiat nam excepturi soluta inventore in voluptatibus aliquid nemo
+                            eligendi sequi obcaecati explicabo aliquam doloribus. Corporis, adipisci?.</p>
                     </div>
                 </div>
                 <!-- fin card-deck -->
@@ -154,7 +177,7 @@
                 <div class="card">
                     <img src="images/nosotros04.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card title">Diana Reyes</h5>
+                        <h5 class="card title">Javier Sanchez</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                     </div>
@@ -169,7 +192,7 @@
     <!-- inicio visitanos -->
     <div id="conocenos" class="row py-4">
         <div class="col-md-4 offset-md-2">
-            <h2>visitanos</h2>
+            <h2>Visitanos</h2>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.1034611794885!2d-57.55162558409164!3d-37.97471475104441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dbe11ab36331%3A0xeed3e647884d5df3!2sPatagones%20380%2C%20B7600BXG%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1655403287932!5m2!1ses-419!2sar"
@@ -179,16 +202,16 @@
         <!-- fin visitanos -->
         <!-- inicio contacto -->
         <div class="col-md-4 mt-4 mt-sm-0">
-            <h2>contactanos</h2>
+            <h2>Contactanos</h2>
             <form action="/" method="post">
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="nombre">nombre</label>
+                        <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" id="nombre" placeholder="" name="nombre">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="apellido">apellido</label>
+                        <label for="apellido">Apellido</label>
                         <input type="text" class="form-control" id="apellido" placeholder="" name="apellido">
                     </div>
                 </div>
@@ -200,12 +223,12 @@
                             name="email">
                     </div>
                     <div class="form-group">
-                        <label for="tel">tel</label>
+                        <label for="tel">Tel</label>
                         <input type="text" class="form-control" id="tel" name="tel">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="mensaje">mensaje</label>
+                    <label for="mensaje">Mensaje</label>
                     <textarea class="form-control" id="mensaje" rows="4"></textarea>
                 </div>
 
