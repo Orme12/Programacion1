@@ -12,9 +12,9 @@
         </div>
     </div>
     {{!-- fin fila 1 --}}
-    {{!-- {{fila 2}} --}}
+    {{!-- fila 2 --}}
     <div class="row">
-        <div class="col-7" style="margin-top: -9px ;">
+        <div class="col-7" style="margin-top:9px ;">
             <h2>Listado de Novedades</h2>
         </div>
         <div class="col-5 text right">
@@ -29,28 +29,23 @@
                 <thead>
                     <tr class="table-dark">
                         <th scope="col">#</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col" class=" text-right">Acciones</th>
-
+                        <th scope="col">titulo</th>
+                        <th scope="col" class=" text-rigth">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each nevedades}}
+                    {{#each novedades}}
                     <tr>
                         <th scope="row">{{id}}</th>
                         <td>{{titulo}}</td>
                         <td class="text-right">
-                            <a href=" " class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> </a>
-                            <a href="/admin/novedades/eliminar/{{id}} " class="btn btn-secondary"><i class="fas fa-trash"></i></a>
+                            <a href="" class="btn btn-secondary"><i class="fas fa-pencil-alt"></i> </a>
+                            <a href="" class="btn btn-secondary"><i class="fas fa-trash"></i></a>
                         </td>
                         {{/each}}
                     </tr>
                 </tbody>
-
             </table>
-
         </div>
-
     </div>
-    {{!-- fin fila 3 --}}
 </div>
