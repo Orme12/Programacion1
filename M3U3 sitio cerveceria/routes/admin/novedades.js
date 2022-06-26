@@ -2,11 +2,34 @@ var express = require('express');
 const pool = require('../../models/bd');
 var router = express.Router();
 var novedadesModel = require('../../models/novedadesModel');
+var util = require('util');
+var cloudinary = require('cloudinary').v2;
+
+var uploader = util.promisify(cloudinary.uploader.upload);
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
 
   var novedades = await novedadesModel.getNovedades();
+
+  novedades = novedades.map(novedad => {
+    if (novedad.img_id) {
+      const imagen = cloudinary.url(novedad.img_id, {
+        width: 80,
+        heigth: 80,
+        crop: 'fill'
+      });
+      return {
+        ...novedad,
+        imagen
+      }
+    } else {
+      return {
+          ...novedad,
+          imagen:' '
+      }
+    }
+  });
 
   res.render('admin/novedades', {
     layout: 'admin/layout',
@@ -28,17 +51,29 @@ router.get('/eliminar/:id', async (req, res, next) => {
 
 router.get('/agregar', (req, res, next) => {
   res.render('admin/agregar', { // agregar hbs
-    layout: 'admin/layout'
+    layout: 'admin/layout' 
   }) //cierra render 
 }); //cierra get
 
-/agregar cuando yo toco el boton de gaurdar/
+// /agregar cuando yo toco el boton de gaurdar/
 router.post('/agregar', async (req, res, next) => {
 
-  console.log(req.body)
+  // console.log(req.body)
   try {
+
+    var img_id = "";
+    if (req.files && Object.keys(req.files).length > 0) {
+      imagen = req.files.imagen;
+      img_id = (await uploader(imagen.tempFilePath)).public_id;
+    }
+
+
+
     if (req.body.titutlo != "" && req.body.subtitulo != "" && req.body.cuerpo != "") {
-      await novedadesModel.insertNovedad(req.body);
+      await novedadesModel.insertNovedad({
+      ...req.body, //spread /titutlo, subtitulo y cuerpo
+      img_id
+    });
       res.redirect('/admin/novedades')
     } else {
       res.render('admin/agregar', {
