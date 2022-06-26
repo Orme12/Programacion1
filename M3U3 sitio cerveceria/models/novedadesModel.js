@@ -15,7 +15,7 @@ async function deleteNovedadesById(id) {
 }
 
 
-async function insertNovedad(obj) {
+async function insertNovedades(obj) {
     try {
         var query = "insert into novedades set ?";
         var rows = await pool.query(query, [obj])
@@ -28,7 +28,7 @@ async function insertNovedad(obj) {
 } //cierra insert
 
 //traigo los datos para modificar una sola novedad
-async function getNovedadById(id) {
+async function getNovedadesById(id) {
     var query = "select * from novedades where id=? ";
     var rows = await pool.query(query, [id]);
     return rows[0];
@@ -36,7 +36,7 @@ async function getNovedadById(id) {
 
 //update//
 //update//
-async function modificarNovedadById(obj, id) {
+async function modificarNovedadesById(obj, id) {
     try {
       var query = "update novedades set ? where id=? ";
       var rows = await pool.query(query, [obj, id]);
@@ -47,4 +47,4 @@ async function modificarNovedadById(obj, id) {
   } //cierra modi >update
 
 
-module.exports = { getNovedades, deleteNovedadesById, insertNovedad, modificarNovedadById}
+module.exports = { getNovedades, deleteNovedadesById, insertNovedades, modificarNovedadesById}
