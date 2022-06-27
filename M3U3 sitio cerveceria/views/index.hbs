@@ -23,20 +23,16 @@
                 <a class="nav-link" data-scroll href="#conocenos">Conocenos</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>
 <div class="container-fluid">
     <div id="home" class="row align-items-center hero">
         <div class="col-lg-3 offset-lg-2">
-            <p>Bajada</p>
-            <h1>Titulo Principal</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis maiores incidunt a quos dolores
-                temporibus fugit eaque inventore non? Deserunt repudiandae facilis voluptatem possimus fugiat
-                consequuntur labore similique illum alias.</p>
+            
+            <h1>BEER X</h1>
+            <p>Hola, nosotros somos BEER X una de las mejores cerbezas del mercado. Con un lugar unico e inigualable, para venir a disfrutar tanto solo o con amigos. 
+                Todas las semanas eventos con bandas y promociones irresistibles. Te invitamos a pasar por nustro local, que esta en Patagones 380.
+                Pero antes conocenos en nuestra pagina web   </p>
 
         </div>
 
@@ -47,7 +43,7 @@
             <ul class="lista-novedades">
                 {{#each novedades}}
                 <li><a href="javascript:void(0);" data-toggle="modal" data-target="#modal{{id}}"><img
-                            src="images/novedades01.jpg">{{titulo}}</a></li>
+                            src="{{imagen}}">{{titulo}}</a></li>
                 {{/each}}
             </ul>
 
@@ -65,20 +61,20 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="testimonio">
-                                <h5>First slide label</h5>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <h5>Javier Santaola</h5>
+                                <p>"La mejor birra del mundo"</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="testimonio">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <h5>Juan Enrique</h5>
+                                <p>"El lugar y la atencion increibles"</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="testimonio">
-                                <h5>Third slide label</h5>
-                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                <h5>Victoria Perez </h5>
+                                <p>"La comida del lugar es unica, super recomendable"</p>
                             </div>
                         </div>
                     </div>
@@ -93,7 +89,7 @@
                 </div>
             </div>
 
-            {{!-- inicio modal --}}
+         {{!-- inicio modal --}}
             {{#each novedades}}
             <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -131,9 +127,11 @@
         </div>
         <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
             <h2>Historia</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio officia beatae praesentium
-                necessitatibus accusamus cumque vel natus quaerat, facere voluptates totam illo! Illo commodi
-                impedit quis architecto maiores cum iusto?</p>
+            <p>Todo arranco, con una joda entre amigos amantes de la cerbeza, entre risas y risas uno de nuestros amigos, creador de BEER X dijo en broma "Si tanto nos gusta la birra, porque nosotros no creamos una?", 
+                desde ese moemnto lo que arranco como un chiste, se convirtio en realidad. Y ahora podemos otorgarles mas de 10 variedades en cervezas, un lugar en el que pasar un buen rato, comer rico 
+                y escuchar buena musica. Esta es nuestra historia, te invitamos a conocernos y asi seguir creandola.
+
+            </p>
         </div>
     </div>
     <!-- fin hisotoria -->
@@ -146,9 +144,9 @@
                 <div class="card">
                     <img src="images/nosotros01.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card title">Diana Reyes</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's content.</p>
+                        <h5 class="card title">Daiana Reyes</h5>
+                        <p class="card-text">Hola soy Daiana Reyes, los chicos en el local me llaman Dai, soy la cajera del lugar. Me entuciasma mucho presentarme,
+                            porque eso significa que estamos creciendo. </p>
                     </div>
                 </div>
                 <!-- fin card-deck -->
@@ -157,9 +155,9 @@
                     <img src="images/nosotros02.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card title">Juan Perez</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam
-                            doloremque libero commodi fugit veniam atque, ducimus iste, voluptates labore, saepe maxime
-                            accusamus ea ipsum rem nulla vero iure tenetur!</p>
+                        <p class="card-text">Hola mi nombre es Juan Perez, o Juancito, como quieran llamarme. Soy el barman del lugar, por ende soy el encargado de crearte felicidad.
+                            Como puede ser con un trago, o con unas de nuestras cervezas bien frias.
+                        </p>
                     </div>
                 </div>
                 <!-- fin card-deck -->
@@ -168,9 +166,8 @@
                     <img src="images/nosotros03.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card title">Agustin Peralta</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex porro aut
-                            exercitationem rerum, fugiat nam excepturi soluta inventore in voluptatibus aliquid nemo
-                            eligendi sequi obcaecati explicabo aliquam doloribus. Corporis, adipisci?.</p>
+                        <p class="card-text">Hola soy Agustin Peralta, soy el encargado del lugar. Por mi pasan todas lasd deciciones para que el bar salga a flote, de igual manera 
+                            en BEER X somos todos uno y no hay decision que tome, que no les consulte al resto. </p>
                     </div>
                 </div>
                 <!-- fin card-deck -->
@@ -179,8 +176,8 @@
                     <img src="images/nosotros04.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card title">Javier Sanchez</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the card's content.</p>
+                        <p class="card-text">Por ultimo estoy yo, Javer Sanchez. Yo soy el DJ del lugar, eso quiere decir que soy el encargado de hacer 
+                            mover tu cuerpo, mientras te tomas una buena cerveza</p>
                     </div>
                 </div>
                 <!-- fin card-deck -->
@@ -248,5 +245,5 @@
 
 </div>
 <footer>
-    <p class="text-center">Diseñado por: Agustin Ormeño 2022</p>
+    <p class="text-center">Diseñado por: Agustin ormeño 2022</p>
 </footer>

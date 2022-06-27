@@ -39,7 +39,7 @@ novedades = novedades.map(novedad => {
 
   res.render('admin/novedades',{
     layout:'admin/layout',
-    usuario: req.session.nombre, //valentin
+    usuario: req.session.nombre, //Agustin
     novedades,
     is_serch: req.query.q !== undefined, // no hay ninguna busqueda 
     q: req.query.q //input de busqueda 

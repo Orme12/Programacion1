@@ -46,9 +46,8 @@ async function modificarNovedadById(obj, id) {
 } // cierra modi update
 
 async function buscarNovedades(busqueda) {
-    var query = "select * form novedades where titulo like ? OR subtitulo like ? OR cuerpo like ?";
-    var rows = await pool.query(query, ['%' + busqueda + 
-    '%', '%' + busqueda + '%']);
+    var query = "select * from novedades where titulo like ? OR subtitulo like ? OR cuerpo like ?";
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
     return rows;
 }
 
