@@ -15,7 +15,7 @@ router.get('/', async function (req, res, next) {
 
   novedades = novedades.map(novedad => {
     if (novedad.img_id) {
-      const imagen = cloudinary.url(novedad.img_id, {
+      const imagen = cloudinary.image(novedad.img_id, {
         width: 80,
         heigth: 80,
         crop: 'fill'
@@ -78,7 +78,7 @@ router.post('/agregar', async (req, res, next) => {
 
 
     if (req.body.titutlo != "" && req.body.subtitulo != "" && req.body.cuerpo != "") {
-      await novedadesModel.insertNovedad({
+      await novedadesModel.insertNovedades({
       ...req.body, //spread /titutlo, subtitulo y cuerpo
       img_id
     });
